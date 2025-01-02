@@ -1,0 +1,40 @@
+---
+title: "Research Software Engineering: a friendly introduction"
+---
+
+These module notes aim to provide you with a friendly introduction to *Research Software Engineering* or *Research Software Development*.
+
+:::{.callout-note}
+# What is Research Software Engineering/Development anyway?
+
+Research Software Engineering or Development is the designing, creation, and maintenance of code and software used by researchers to do research.
+
+This can and does include anything from:
+
+- Writing code to use yourself, to run analyses on your desktop computer or laptop;
+- Code you share with your research group, to run models on a HPC (high performance computing) cluster;
+- Code that you have inherited from other researchers and continue to edit and use;
+- Working on an open-source project and contributing changes to a project hosted somewhere like GitHub;
+- Working on a piece of commercial software that controls microscopy instruments as a Software Developer for a large company.
+
+:::
+
+This course introduces concepts such as testing, managing dependencies, version control and repositories, that will help you to keep your work under control. This course uses **Python code as an example; however, the concepts discussed are language agnostic.** Where possible, I have added code examples, links to resources, or equivalent package names for other languages; I will supplement this over time.
+
+# Module structure
+
+This module is split into two parts, in order to introduce techniques in a sensible way and to not overwhelm you.
+
+## Part 1: working with existing projects
+
+In this section, we use an imaginary messy project to learn about techniques to tidy up your code. We apply the acronym **DeReLiCT** to help you prevent your code from falling apart, and introduce **De**pendency Management, **Re**positories and version control, **Li**censes and **C**itations, and **T**esting. 
+
+We talk through techniques you can apply if you've only got half an hour to spare and desperately need to improve your messy codebase, and how to strategically apply techniques if you have a little bit longer.
+
+We will work through some example messy code and see how to apply some of these techniques to improve its quality as a piece of research software.
+
+## Part 2: Starting a new project
+
+In this section of the module, we will take stock of all the techniques we learned in the first section, and talk through what might have made our lives easier if we had been able to make decisions from the very start of the coding project.
+
+We talk through different ways of organising our code projects, and create some workflows to apply going forward when writing research software.

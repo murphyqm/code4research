@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Software Engineering: a friendly introduction",
+    "section": "",
+    "text": "These module notes aim to provide you with a friendly introduction to Research Software Engineering or Research Software Development.\nThis course introduces concepts such as testing, managing dependencies, version control and repositories, that will help you to keep your work under control. This course uses Python code as an example; however, the concepts discussed are language agnostic. Where possible, I have added code examples, links to resources, or equivalent package names for other languages; I will supplement this over time."
+  },
+  {
+    "objectID": "index.html#part-1-working-with-existing-projects",
+    "href": "index.html#part-1-working-with-existing-projects",
+    "title": "Research Software Engineering: a friendly introduction",
+    "section": "Part 1: working with existing projects",
+    "text": "Part 1: working with existing projects\nIn this section, we use an imaginary messy project to learn about techniques to tidy up your code. We apply the acronym DeReLiCT to help you prevent your code from falling apart, and introduce Dependency Management, Repositories and version control, Licenses and Citations, and Testing.\nWe talk through techniques you can apply if you’ve only got half an hour to spare and desperately need to improve your messy codebase, and how to strategically apply techniques if you have a little bit longer.\nWe will work through some example messy code and see how to apply some of these techniques to improve its quality as a piece of research software."
+  },
+  {
+    "objectID": "index.html#part-2-starting-a-new-project",
+    "href": "index.html#part-2-starting-a-new-project",
+    "title": "Research Software Engineering: a friendly introduction",
+    "section": "Part 2: Starting a new project",
+    "text": "Part 2: Starting a new project\nIn this section of the module, we will take stock of all the techniques we learned in the first section, and talk through what might have made our lives easier if we had been able to make decisions from the very start of the coding project.\nWe talk through different ways of organising our code projects, and create some workflows to apply going forward when writing research software."
+  }
+]
