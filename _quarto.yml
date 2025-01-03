@@ -38,5 +38,7 @@ format:
       - theme.scss
     toc: true
     footnotes-hover: true
+    comments:
+      hypothesis: true
 
 bibliography: refs.bib
