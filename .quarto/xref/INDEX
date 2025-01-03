@@ -4,5 +4,29 @@
   },
   "about.qmd": {
     "about.html": "e61e21f0"
+  },
+  "motivation/intro.qmd": {
+    "intro.html": "c5f18c7b"
+  },
+  "existing-projects/intro.qmd": {
+    "intro.html": "b7047a5a"
+  },
+  "existing-projects/repository.qmd": {
+    "repository.html": "d20a3bec"
+  },
+  "existing-projects/license.qmd": {
+    "license.html": "602b15e8"
+  },
+  "existing-projects/citation.qmd": {
+    "citation.html": "348b542d"
+  },
+  "existing-projects/testing.qmd": {
+    "testing.html": "fb53bc29"
+  },
+  "existing-projects/dependencies.qmd": {
+    "dependencies.html": "336ab976"
+  },
+  "starting-a-new-project/intro.qmd": {
+    "intro.html": "29dd7548"
   }
 }

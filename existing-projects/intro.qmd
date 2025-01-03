@@ -1,0 +1,7 @@
+# Preventing DeReLiCT code
+
+Oftentimes, especially when doing research, we begin the coding portion of a project without that much planning.
+
+In some projects, coding is an analysis tool: it lets us investigate data, perform statistical calculations, and create plots and visualisations. We might write snippets of code in an interactive notebook[^notebook]
+
+[^notebook]: interactive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.

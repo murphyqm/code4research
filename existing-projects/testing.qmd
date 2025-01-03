@@ -1,0 +1,18 @@
+# Testing
+
+## Using the Pytest package
+
+We're going to use Pytest in two different ways: as a command line interface application (a CLI app) and as a Python module (in Python scripts).
+We'll look at it as a module first while building our tests.
+
+### As a module
+
+One issue we raised above is that often the values we need to check against each other are floats and are not *exactly* equal.
+
+Lets look at the [pytest.approx](https://docs.pytest.org/en/stable/reference/reference.html#pytest-approx) documentation.
+
+```python
+approx(expected, rel=None, abs=None, nan_ok=False)
+```
+
+[numpy.testing.assert_allclose](https://numpy.org/doc/stable/reference/generated/numpy.testing.assert_allclose.html#numpy.testing.assert_allclose)

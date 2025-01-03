@@ -26,5 +26,43 @@
     "title": "Research Software Engineering: a friendly introduction",
     "section": "Part 2: Starting a new project",
     "text": "Part 2: Starting a new project\nIn this section of the module, we will take stock of all the techniques we learned in the first section, and talk through what might have made our lives easier if we had been able to make decisions from the very start of the coding project.\nWe talk through different ways of organising our code projects, and create some workflows to apply going forward when writing research software."
+  },
+  {
+    "objectID": "existing-projects/intro.html",
+    "href": "existing-projects/intro.html",
+    "title": "Preventing DeReLiCT code",
+    "section": "",
+    "text": "Oftentimes, especially when doing research, we begin the coding portion of a project without that much planning.\nIn some projects, coding is an analysis tool: it lets us investigate data, perform statistical calculations, and create plots and visualisations. We might write snippets of code in an interactive notebook1",
+    "crumbs": [
+      "Home",
+      "Part 1",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "existing-projects/intro.html#footnotes",
+    "href": "existing-projects/intro.html#footnotes",
+    "title": "Preventing DeReLiCT code",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\ninteractive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.↩︎",
+    "crumbs": [
+      "Home",
+      "Part 1",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "existing-projects/testing.html",
+    "href": "existing-projects/testing.html",
+    "title": "Testing",
+    "section": "",
+    "text": "We’re going to use Pytest in two different ways: as a command line interface application (a CLI app) and as a Python module (in Python scripts). We’ll look at it as a module first while building our tests.\n\n\nOne issue we raised above is that often the values we need to check against each other are floats and are not exactly equal.\nLets look at the pytest.approx documentation.\napprox(expected, rel=None, abs=None, nan_ok=False)\nnumpy.testing.assert_allclose"
+  },
+  {
+    "objectID": "existing-projects/testing.html#using-the-pytest-package",
+    "href": "existing-projects/testing.html#using-the-pytest-package",
+    "title": "Testing",
+    "section": "",
+    "text": "We’re going to use Pytest in two different ways: as a command line interface application (a CLI app) and as a Python module (in Python scripts). We’ll look at it as a module first while building our tests.\n\n\nOne issue we raised above is that often the values we need to check against each other are floats and are not exactly equal.\nLets look at the pytest.approx documentation.\napprox(expected, rel=None, abs=None, nan_ok=False)\nnumpy.testing.assert_allclose"
   }
 ]

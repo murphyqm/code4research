@@ -1,19 +1,29 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "code4research"
+  sidebar:
+    search: true
+    contents:
+      - section: Part 1
+        contents:
+          - text: "Introduction"
+            href: existing-projects/intro.qmd
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - existing-projects/testing.qmd
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+    footnotes-hover: true
 
 
 
