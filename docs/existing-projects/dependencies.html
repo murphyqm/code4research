@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -38,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-867ed020ad6617227ff8aa943f37a81e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e3bb5f2d30122ae644414fbe04fdb5ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,10 +122,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -111,24 +164,16 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../existing-projects/intro.html">Part 1</a></li><li class="breadcrumb-item"><a href="../existing-projects/dependencies.html">Dependencies</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -146,6 +191,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../existing-projects/dependencies.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Dependencies</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -153,19 +204,277 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dependencies" id="toc-dependencies" class="nav-link active" data-scroll-target="#dependencies">Dependencies</a>
+  <ul class="collapse">
+  <li><a href="#package-management-for-python" id="toc-package-management-for-python" class="nav-link" data-scroll-target="#package-management-for-python">Package management for Python</a>
+  <ul class="collapse">
+  <li><a href="#package-management-for-other-coding-languages" id="toc-package-management-for-other-coding-languages" class="nav-link" data-scroll-target="#package-management-for-other-coding-languages">Package management for other coding languages</a></li>
+  </ul></li>
+  <li><a href="#dependencies-step-by-step-for-existing-projects-python" id="toc-dependencies-step-by-step-for-existing-projects-python" class="nav-link" data-scroll-target="#dependencies-step-by-step-for-existing-projects-python">Dependencies: step-by-step for existing projects (Python)</a>
+  <ul class="collapse">
+  <li><a href="#step-0-pick-your-package-manager" id="toc-step-0-pick-your-package-manager" class="nav-link" data-scroll-target="#step-0-pick-your-package-manager">Step 0: Pick your package manager</a></li>
+  <li><a href="#step-1-manually-record-what-libraries-you-use" id="toc-step-1-manually-record-what-libraries-you-use" class="nav-link" data-scroll-target="#step-1-manually-record-what-libraries-you-use">Step 1: Manually record what libraries you use</a></li>
+  <li><a href="#step-2-create-a-new-environment" id="toc-step-2-create-a-new-environment" class="nav-link" data-scroll-target="#step-2-create-a-new-environment">Step 2: Create a new environment</a></li>
+  <li><a href="#step-3-activate-the-environment" id="toc-step-3-activate-the-environment" class="nav-link" data-scroll-target="#step-3-activate-the-environment">Step 3: Activate the environment</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../existing-projects/intro.html">Part 1</a></li><li class="breadcrumb-item"><a href="../existing-projects/dependencies.html">Dependencies</a></li></ol></nav></header>
 
 
 
 
+<section id="dependencies" class="level1">
+<h1>Dependencies</h1>
+<p>Dependencies are the versions of different packages/modules that your code depends on, for example the version of Python you are using, and any libraries you have to import, like <code>matplotlib</code>, <code>scipy</code>, <code>tensorflow</code> etc.</p>
+<p>Dependencies are an important thing to keep track of when building scientific code. How many different external libraries does your code depend on? What versions of these libraries does it need? How do you install and update these different libraries?</p>
+<p>Browse through this <a href="../existing-projects/presentations/dep-pres.html" target="_blank">quick presentation</a> to learn more.</p>
+<section id="package-management-for-python" class="level2">
+<h2 class="anchored" data-anchor-id="package-management-for-python">Package management for Python</h2>
+<p>In Python, there are lots of different ways to install and manage packages and dependencies. These different tools generally involve using virtual environments in order to keep the dependencies for different projects separate and tidy. Some package installation and management tools include:</p>
+<ul>
+<li><a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">Conda</a>/<a href="https://mamba.readthedocs.io/en/latest/">Mamba</a>
+<ul>
+<li>You can install conda with <a href="https://github.com/conda-forge/miniforge">Miniforge</a></li>
+</ul></li>
+<li><a href="https://packaging.python.org/en/latest/key_projects/#pip">pip</a> and <a href="https://packaging.python.org/en/latest/key_projects/#pipenv">Pipenv</a></li>
+<li><a href="https://pixi.sh/v0.18.0/basic_usage/">pixi</a></li>
+<li><a href="https://python-poetry.org/">Poetry</a></li>
+<li><a href="https://github.com/astral-sh/uv">uv</a></li>
+</ul>
+<p>You can read more about Python package management tool recommendations <a href="https://packaging.python.org/en/latest/guides/tool-recommendations/">here</a>. The package management tool you use will vary depending on whether you want to build your code into a package itself, or are relying primarily on external libraries. Some of these package managers include entire workflows for building and publishing Python packages, while others focus on organising pre-existing packages.</p>
+<section id="package-management-for-other-coding-languages" class="level3 box-lb">
+<h3 class="anchored" data-anchor-id="package-management-for-other-coding-languages">Package management for other coding languages</h3>
+<p>Note that I do not have as extensive experience managing projects, dependencies and packages in the following languages so please proceed with caution.</p>
+<p><span class="extra">Package management in R</span></p>
+<p><a href="https://docs.anaconda.com/working-with-conda/packages/using-r-language/"><strong>conda for R</strong></a>: you can install conda via Miniforge as linked above, and then install R packages through this following these <a href="https://docs.anaconda.com/working-with-conda/packages/using-r-language/">instructions for R with conda</a>.</p>
+<p><a href="https://rstudio.github.io/renv/index.html"><strong>renv</strong></a>: the <strong>r</strong>eproducible <strong>en</strong>vironment package for R has some very nice introductory <a href="https://rstudio.github.io/renv/articles/renv.html">documentation</a>.</p>
+<p><span class="extra">Package management in Julia</span></p>
+<p><a href="https://docs.julialang.org/en/v1/stdlib/Pkg/"><strong>Pkg</strong></a>: Pkg is Julia’s built-in package manager.</p>
+</section>
+</section>
+<section id="dependencies-step-by-step-for-existing-projects-python" class="level2">
+<h2 class="anchored" data-anchor-id="dependencies-step-by-step-for-existing-projects-python">Dependencies: step-by-step for existing projects (Python)</h2>
+<p>Ok, so we’ve looked at the basic behind-the-scenes of what dependency management is, and some of the different options available. But <span class="extra">how do you retroactively apply dependency management to an existing messy code project?</span>. While we can’t record things that we’ve done in the past, we can start from now.</p>
+<section id="step-0-pick-your-package-manager" class="level3">
+<h3 class="anchored" data-anchor-id="step-0-pick-your-package-manager">Step 0: Pick your package manager</h3>
+<p>While I’ve mentioned a whole host of options for Python package managers above, I’m going to work through some basic instructions for just three options: <code>conda</code> (installed via <code>miniforge</code>), <code>pixi</code>, and <code>uv</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="package">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">conda</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">pixi</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">uv</a></li></ul>
+<div class="tab-content" data-group="package">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>If you have never before used a package management system, or work in science, <code>conda</code> might be the best choice for you. See this <a href="https://murphyqm.github.io/posts/2024-11-27-conda-envs/">conda blogpost</a> <span class="citation" data-cites="Murphy-Quinlan2024-gc">(<a href="#ref-Murphy-Quinlan2024-gc" role="doc-biblioref">Murphy Quinlan 2024</a>)</span> for useful links to installation guides, and an in-depth use guide.</p>
+<p>Conda is very widely used and recognised, especially amongst researchers in science and medical fields.</p>
+<ul>
+<li><a href="https://github.com/conda-forge/miniforge">Miniforge repository</a></li>
+<li><a href="https://github.com/conda-forge/miniforge/blob/main/LICENSE">Miniforge License</a></li>
+<li><a href="https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0">Step-by-step Miniforge tutorial</a></li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Pixi is great if you are using a lot of conda and PyPI packages together (which can get messy); it also can work with a <code>pyproject.toml</code> file if you plan on packaging your code at some point. It is very fast.</p>
+<p>Have a read through <a href="https://ericmjl.github.io/blog/2024/8/16/its-time-to-try-out-pixi/">this blog post on testing pixi</a> <span class="citation" data-cites="Ma2024-gi">(<a href="#ref-Ma2024-gi" role="doc-biblioref">Ma 2024</a>)</span>.</p>
+<ul>
+<li><a href="https://github.com/prefix-dev/pixi">Pixi repository</a></li>
+<li><a href="https://github.com/prefix-dev/pixi/blob/main/LICENSE">Pixi License</a></li>
+<li><a href="https://pixi.sh/dev/tutorials/python/">Pixi Python tutorial</a></li>
+</ul>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Tab content</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-1-manually-record-what-libraries-you-use" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-manually-record-what-libraries-you-use">Step 1: Manually record what libraries you use</h3>
+<p>Scroll through all the scripts you use in your project, and record all the packages that you call as imports across these different Python files and Jupyter notebooks (<code>*.py</code> and <code>*.ipynb</code> files).</p>
+<p>For example, I have a series of Python files in my project folder with the following first few lines:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># file1.ipynb</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># file2.py</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>My list of jotted down dependencies are then:</p>
+<ul>
+<li><code>numpy</code></li>
+<li><code>matplotlib</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li><code>seaborn</code></li>
+<li><code>pandas</code></li>
+<li><code>jupyter</code> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Plain system Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">An old environment</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>If until now you’ve been running your Python programs directly using your system’s Python (so you have never set up an environment), let’s just see what versions of packages your system is using.</p>
+<p>First, check the version of Python by running the following from the command line:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>From the command line, run the following (replacing <code>numpy</code> with your dependencies in turn):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import numpy; print(numpy.__version__)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This gives you an idea of what version of each of these dependencies your system has been using. Copy these down.</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>If you have been using an environment but it’s become messy or broken and you want to start over, there are a few different options for you.</p>
+<p>Depending on the package management software you used to build the environment, the method to export the environment will be different. Search your package manager software name and “export dependencies” to see how to do this automatically.</p>
+<p>Alternatively, if you’ve already manually collected the libraries used, and you know there’s a lot of <strong>bloat</strong> in your existing environment (lot’s of unused packages), you can instead activate the environment and then from the command line run the following (replacing <code>numpy</code> with your dependencies in turn):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import numpy; print(numpy.__version__)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Also check the version of Python by running the following from the command line (again, with the environment active):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This gives you an idea of what version of each of these dependencies your system has been using. Copy these down.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-create-a-new-environment" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-create-a-new-environment">Step 2: Create a new environment</h3>
+<p>Now that you know what packages you want to include in your environment, you can create a new environment. In the last step, we recorded the versions of different libraries we were using: right now, we’re not going to worry about pinning our versions to match our previous set-up unless something goes wrong. We’ll keep our manually recorded version numbers to hand just-in-case.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="package">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">conda</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">pixi</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">uv</a></li></ul>
+<div class="tab-content" data-group="package">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>To create a new conda environment, you need to create an <code>environment.yml</code> file. This will contain a list of your dependencies, like this:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> my-env-name</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python=3.12</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> numpy</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> matplotlib</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pandas</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> seaborn</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> jupyter</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Put this in your project folder. I’ve just pinned the Python version as an example of how to pin a specific version. Then, from the command line (within this folder), run:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you need to add pip dependencies, then your <code>environment.yml</code> will look like this:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> my-env-name</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python=3.12</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> numpy</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> matplotlib</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pandas</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> seaborn</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> jupyter</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pip</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">pip</span><span class="kw">:</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> black</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note: mixing <code>conda</code> and <code>pip</code> will cause issues; please read this <a href="https://murphyqm.github.io/posts/2024-11-27-conda-envs/#mixing-in-pip">post on mixing conda and pip</a> <span class="citation" data-cites="Murphy-Quinlan2024-gc">(<a href="#ref-Murphy-Quinlan2024-gc" role="doc-biblioref">Murphy Quinlan 2024</a>)</span>.</p>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>To create a new pixi environment for your pre-existing project, from inside the project directory run:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will create a file called <code>pixi.toml</code> that will look something like this:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">authors</span> <span class="op">=</span> <span class="op">[</span><span class="st">""</span><span class="op">]</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="dt">channels</span> <span class="op">=</span> <span class="op">[</span><span class="st">"conda-forge"</span><span class="op">]</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Add a short description here"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"folder-name"</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="dt">platforms</span> <span class="op">=</span> <span class="op">[</span><span class="st">"linux-64"</span><span class="op">]</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"0.1.0"</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="kw">[tasks]</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="kw">[dependencies]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Quick add</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Manual add</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">PyPI dependencies</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>We can add pinned and unpinned dependencies from the command line:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> add python=3.12 numpy matplotlib pandas seaborn jupyter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will fill in the dependencies section of our <code>pixi.toml</code> file with some automatically assigned version restrictions (given our pinned Python version):</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[dependencies]</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">python</span> <span class="op">=</span> <span class="st">"3.12.*"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dt">numpy</span> <span class="op">=</span> <span class="st">"&gt;=2.2.1,&lt;3"</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="dt">matplotlib</span> <span class="op">=</span> <span class="st">"&gt;=3.10.0,&lt;4"</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dt">pandas</span> <span class="op">=</span> <span class="st">"&gt;=2.2.3,&lt;3"</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="dt">seaborn</span> <span class="op">=</span> <span class="st">"&gt;=0.13.2,&lt;0.14"</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="dt">jupyter</span> <span class="op">=</span> <span class="st">"&gt;=1.1.1,&lt;2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>We can also fill in our dependencies (with as-of-yet no pinned versions except for Python as an example):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[dependencies]</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dt">python</span> <span class="op">=</span> <span class="st">"3.12.*"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="dt">numpy</span> <span class="op">=</span> <span class="st">"*"</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dt">matplotlib</span> <span class="op">=</span> <span class="st">"*"</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dt">pandas</span> <span class="op">=</span> <span class="st">"*"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="dt">seaborn</span> <span class="op">=</span> <span class="st">"*"</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="dt">jupyter</span> <span class="op">=</span> <span class="st">"*"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>If you need any pip/PyPI dependencies, then simply add this section to the file:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[pypi-dependencies]</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dt">black</span> <span class="op">=</span> <span class="st">"*"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively, run this from the command line:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> add <span class="at">--pypi</span> black</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>which will add the following to your <code>pixi.toml</code>:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[pypi-dependencies]</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="dt">black</span> <span class="op">=</span> <span class="st">"&gt;=24.10.0, &lt;25"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Save any changes to your <code>pixi.toml</code> file, then back in the command line in the folder containing your <code>pixi.toml</code>, run the following:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will install the listed packages and create a <code>pixi.lock</code> file.</p>
+<p>Read the <a href="https://pixi.sh/v0.21.1/features/lockfile/#what-is-a-lock-file">Pixi docs on lockfiles</a>.</p>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<p>Tab content</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-activate-the-environment" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-activate-the-environment">Step 3: Activate the environment</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="package">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">conda</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">pixi</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">uv</a></li></ul>
+<div class="tab-content" data-group="package">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>To activate your conda environment, from the command line run:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate my-env-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and then either launch your Jupyter notebook or run your Python script.</p>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>From the project folder, run:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> shell</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and then either launch your Jupyter notebook or run your Python script.</p>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<p>Tab content</p>
+</div>
+</div>
+</div>
 
 
 
-</main> <!-- /main -->
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Ma2024-gi" class="csl-entry" role="listitem">
+Ma, Eric J. 2024. <span>“<span class="nocase">It’s time to try out pixi!</span>”</span> <em>Eric J. Ma’s Blog</em>, August.
+</div>
+<div id="ref-Murphy-Quinlan2024-gc" class="csl-entry" role="listitem">
+Murphy Quinlan, Maeve. 2024. <span>“<span class="nocase">The Art of Conda</span>.”</span> <a href="https://murphyqm.github.io/posts/2024-11-27-conda-envs" class="uri">https://murphyqm.github.io/posts/2024-11-27-conda-envs</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>We don’t specify the module (the <code>pyplot</code> part of <code>matplotlib.pyplot</code>) in our requirements.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>While <code>jupyter</code> isn’t imported in our files, we are using a Jupyter Notebook (<code>file1.ipynb</code> required Jupyter) so this must be included in our dependencies.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

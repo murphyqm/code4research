@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -38,7 +58,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-867ed020ad6617227ff8aa943f37a81e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e3bb5f2d30122ae644414fbe04fdb5ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,10 +88,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -114,36 +133,34 @@ ul.task-list li input[type="checkbox"] {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Research Software Engineering: a friendly introduction</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Part 1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./existing-projects/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./existing-projects/dependencies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dependencies</span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +175,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#module-structure" id="toc-module-structure" class="nav-link active" data-scroll-target="#module-structure">Module structure</a>
+  <li><a href="#help-ive-only-got-10-minutes-to-improve-my-code" id="toc-help-ive-only-got-10-minutes-to-improve-my-code" class="nav-link active" data-scroll-target="#help-ive-only-got-10-minutes-to-improve-my-code">Help! I’ve only got 10 minutes to improve my code</a></li>
+  <li><a href="#module-structure" id="toc-module-structure" class="nav-link" data-scroll-target="#module-structure">Module structure</a>
   <ul class="collapse">
   <li><a href="#part-1-working-with-existing-projects" id="toc-part-1-working-with-existing-projects" class="nav-link" data-scroll-target="#part-1-working-with-existing-projects">Part 1: working with existing projects</a></li>
   <li><a href="#part-2-starting-a-new-project" id="toc-part-2-starting-a-new-project" class="nav-link" data-scroll-target="#part-2-starting-a-new-project">Part 2: Starting a new project</a></li>
@@ -167,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -176,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -188,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>These module notes aim to provide you with a friendly introduction to <em>Research Software Engineering</em> or <em>Research Software Development</em>.</p>
+<p>These module notes aim to provide you with a friendly introduction to <em>Research Software Engineering</em> or <em>Research Software Development</em>. This is an evolution of the course notes <a href="https://software-dev.streamlit.app/">Sustainable Software Development</a> <span class="citation" data-cites="Murphy-Quinlan2024-ba">(<a href="#ref-Murphy-Quinlan2024-ba" role="doc-biblioref">Murphy Quinlan 2024</a>)</span>, intended to be more flexible, accessible, and widely usable both for self-directed, asynchronous learning and for guided instruction.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -210,26 +228,35 @@ What is Research Software Engineering/Development anyway?
 </ul>
 </div>
 </div>
-<p>This course introduces concepts such as testing, managing dependencies, version control and repositories, that will help you to keep your work under control. This course uses <strong>Python code as an example; however, the concepts discussed are language agnostic.</strong> Where possible, I have added code examples, links to resources, or equivalent package names for other languages; I will supplement this over time.</p>
-<section id="module-structure" class="level1">
-<h1>Module structure</h1>
+<p>This course introduces concepts such as testing, managing dependencies, version control and repositories, that will help you to keep your work under control. This course uses <strong>Python code as an example; however, the concepts discussed are largely language agnostic.</strong> Where possible, I have added code examples, links to resources, or equivalent package names for other languages; I will supplement this over time.</p>
+<section id="help-ive-only-got-10-minutes-to-improve-my-code" class="level2 box-lp">
+<h2 class="anchored" data-anchor-id="help-ive-only-got-10-minutes-to-improve-my-code">Help! I’ve only got 10 minutes to improve my code</h2>
+<p>We know the feeling. If your code is falling down around you and you need some quick help right now, visit <a href="./existing-projects/intro.html#ten-minute-sos">Derelict code</a></p>
+</section>
+<section id="module-structure" class="level2">
+<h2 class="anchored" data-anchor-id="module-structure">Module structure</h2>
 <p>This module is split into two parts, in order to introduce techniques in a sensible way and to not overwhelm you.</p>
-<section id="part-1-working-with-existing-projects" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-working-with-existing-projects">Part 1: working with existing projects</h2>
+<section id="part-1-working-with-existing-projects" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-working-with-existing-projects">Part 1: working with existing projects</h3>
 <p>In this section, we use an imaginary messy project to learn about techniques to tidy up your code. We apply the acronym <strong>DeReLiCT</strong> to help you prevent your code from falling apart, and introduce <strong>De</strong>pendency Management, <strong>Re</strong>positories and version control, <strong>Li</strong>censes and <strong>C</strong>itations, and <strong>T</strong>esting.</p>
 <p>We talk through techniques you can apply if you’ve only got half an hour to spare and desperately need to improve your messy codebase, and how to strategically apply techniques if you have a little bit longer.</p>
 <p>We will work through some example messy code and see how to apply some of these techniques to improve its quality as a piece of research software.</p>
 </section>
-<section id="part-2-starting-a-new-project" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-starting-a-new-project">Part 2: Starting a new project</h2>
+<section id="part-2-starting-a-new-project" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-starting-a-new-project">Part 2: Starting a new project</h3>
 <p>In this section of the module, we will take stock of all the techniques we learned in the first section, and talk through what might have made our lives easier if we had been able to make decisions from the very start of the coding project.</p>
 <p>We talk through different ways of organising our code projects, and create some workflows to apply going forward when writing research software.</p>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Murphy-Quinlan2024-ba" class="csl-entry" role="listitem">
+Murphy Quinlan, Maeve. 2024. <span>“<span>Sustainable Software Dev</span>.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.13868947">https://doi.org/10.5281/zenodo.13868947</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

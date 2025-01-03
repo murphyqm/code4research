@@ -28,5 +28,11 @@
   },
   "starting-a-new-project/intro.qmd": {
     "intro.html": "29dd7548"
+  },
+  "existing-projects/dep-pres.qmd": {
+    "dep-pres.html": "c4f0e982"
+  },
+  "existing-projects/presentations/dep-pres.qmd": {
+    "dep-pres.html": "9a0a7daf"
   }
 }

@@ -2,6 +2,49 @@
 
 Oftentimes, especially when doing research, we begin the coding portion of a project without that much planning.
 
-In some projects, coding is an analysis tool: it lets us investigate data, perform statistical calculations, and create plots and visualisations. We might write snippets of code in an interactive notebook[^notebook]
+In some projects, coding is an analysis tool: it lets us investigate data, perform statistical calculations, and create plots and visualisations. We might write snippets of code in an interactive notebook[^notebook] and quickly prototype. These snippets (or a tidied-up subset) might end up shared in supplementary information alongside a published research article.
+In other situations, code might be a more foundational part of the project, for example when building a numerical model. This code may be written more formally, and you might expect it to be shared or used more widely.
+Another case is where code is a tool for sharing and presenting our results: this can be again for building visualisations (but this time, publication-worthy, polished visualisations) or can scale up as far as web-apps or dashboards.
 
-[^notebook]: interactive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.
+The **requirements** for each of these situations is quite different, and it can be very challenging to manage code across these: in many situations, you might need to dip in to more than one of these categories.
+
+In part 2 of this course, we'll dive in to strategies for setting a project up for success from the start, but in this section we are going to look at tools and approaches that you can apply to an already-existing, stressfully messy project. While good planning is fantastically useful, and *of course on completing this course you'll implement it going forward*, it's never too late to add some tools to your project to help it run more smoothly.
+
+[^notebook]: Interactive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.
+
+## DeReLiCT Code
+
+Because I love an acronym, and because I find having a checklist makes things much less overwhelming, I've distilled down what I think are the key features of software development into five categories:
+
+1. **De**pendencies
+2. **Re**pository
+3. **Li**cense
+4. **C**itation
+5. **Te**sting
+
+## Ten minute SOS
+
+::: {.box-lp}
+## Help! I've only got 10 minutes to improve my code
+
+We know the feeling. If your code is falling down around you and you need some quick help
+right now, then let's just look at these two points:
+
+1. **De**pendencies
+
+Write down a list of the libraries you've used in your code in a requirements.txt file.
+
+If you have a minute more, let's set up a quick virtual environment with conda - if you have [Miniforge](https://github.com/conda-forge/miniforge) installed already, you can do this in five minutes. See a walkthrough here: ["art of conda" blog post](https://murphyqm.github.io/posts/2024-11-27-conda-envs/).
+
+2. **Re**pository
+
+Let's initialise a `git` repository in your working folder. You'll need to have [`git` installed on your system](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git); from your project directory, run the following from the command line:
+
+```bash
+git init
+```
+
+If this sounds nonsensical right now, do not fear! It might take a little bit longer than ten minutes, but if you read through the *De*pendencies and **Re**pository section you will understand better what's going on in both these sections!
+
+:::
+

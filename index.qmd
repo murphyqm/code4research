@@ -2,7 +2,7 @@
 title: "Research Software Engineering: a friendly introduction"
 ---
 
-These module notes aim to provide you with a friendly introduction to *Research Software Engineering* or *Research Software Development*.
+These module notes aim to provide you with a friendly introduction to *Research Software Engineering* or *Research Software Development*. This is an evolution of the course notes [Sustainable Software Development](https://software-dev.streamlit.app/) [@Murphy-Quinlan2024-ba], intended to be more flexible, accessible, and widely usable both for self-directed, asynchronous learning and for guided instruction.
 
 :::{.callout-note}
 # What is Research Software Engineering/Development anyway?
@@ -19,13 +19,21 @@ This can and does include anything from:
 
 :::
 
-This course introduces concepts such as testing, managing dependencies, version control and repositories, that will help you to keep your work under control. This course uses **Python code as an example; however, the concepts discussed are language agnostic.** Where possible, I have added code examples, links to resources, or equivalent package names for other languages; I will supplement this over time.
+This course introduces concepts such as testing, managing dependencies, version control and repositories, that will help you to keep your work under control. This course uses **Python code as an example; however, the concepts discussed are largely language agnostic.** Where possible, I have added code examples, links to resources, or equivalent package names for other languages; I will supplement this over time.
 
-# Module structure
+::: {.box-lp}
+## Help! I've only got 10 minutes to improve my code
+
+We know the feeling. If your code is falling down around you and you need some quick help
+right now, visit [Derelict code](existing-projects/intro.qmd#ten-minute-sos)
+
+:::
+
+## Module structure
 
 This module is split into two parts, in order to introduce techniques in a sensible way and to not overwhelm you.
 
-## Part 1: working with existing projects
+### Part 1: working with existing projects
 
 In this section, we use an imaginary messy project to learn about techniques to tidy up your code. We apply the acronym **DeReLiCT** to help you prevent your code from falling apart, and introduce **De**pendency Management, **Re**positories and version control, **Li**censes and **C**itations, and **T**esting. 
 
@@ -33,7 +41,7 @@ We talk through techniques you can apply if you've only got half an hour to spar
 
 We will work through some example messy code and see how to apply some of these techniques to improve its quality as a piece of research software.
 
-## Part 2: Starting a new project
+### Part 2: Starting a new project
 
 In this section of the module, we will take stock of all the techniques we learned in the first section, and talk through what might have made our lives easier if we had been able to make decisions from the very start of the coding project.
 

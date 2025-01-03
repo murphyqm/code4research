@@ -5,12 +5,17 @@ project:
 website:
   title: "code4research"
   sidebar:
-    search: true
+    collapse-level: 1
+    border: false
+    style: "docked"
+    search: false
     contents:
       - section: Part 1
         contents:
           - text: "Introduction"
             href: existing-projects/intro.qmd
+          - text: "Dependencies"
+            href: existing-projects/dependencies.qmd
   navbar:
     left:
       - href: index.qmd
@@ -18,12 +23,14 @@ website:
       - about.qmd
       - existing-projects/testing.qmd
 
+
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    page-layout: full
+    mainfont: Space Grotesk
+    theme: 
+      - theme.scss
     toc: true
     footnotes-hover: true
 
-
-
+bibliography: refs.bib

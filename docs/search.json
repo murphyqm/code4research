@@ -7,32 +7,83 @@
     "text": "About this site"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Research Software Engineering: a friendly introduction",
+    "objectID": "existing-projects/dependencies.html",
+    "href": "existing-projects/dependencies.html",
+    "title": "Dependencies",
     "section": "",
-    "text": "These module notes aim to provide you with a friendly introduction to Research Software Engineering or Research Software Development.\nThis course introduces concepts such as testing, managing dependencies, version control and repositories, that will help you to keep your work under control. This course uses Python code as an example; however, the concepts discussed are language agnostic. Where possible, I have added code examples, links to resources, or equivalent package names for other languages; I will supplement this over time."
+    "text": "Dependencies are the versions of different packages/modules that your code depends on, for example the version of Python you are using, and any libraries you have to import, like matplotlib, scipy, tensorflow etc.\nDependencies are an important thing to keep track of when building scientific code. How many different external libraries does your code depend on? What versions of these libraries does it need? How do you install and update these different libraries?\nBrowse through this quick presentation to learn more.\n\n\nIn Python, there are lots of different ways to install and manage packages and dependencies. These different tools generally involve using virtual environments in order to keep the dependencies for different projects separate and tidy. Some package installation and management tools include:\n\nConda/Mamba\n\nYou can install conda with Miniforge\n\npip and Pipenv\npixi\nPoetry\nuv\n\nYou can read more about Python package management tool recommendations here. The package management tool you use will vary depending on whether you want to build your code into a package itself, or are relying primarily on external libraries. Some of these package managers include entire workflows for building and publishing Python packages, while others focus on organising pre-existing packages.\n\n\nNote that I do not have as extensive experience managing projects, dependencies and packages in the following languages so please proceed with caution.\nPackage management in R\nconda for R: you can install conda via Miniforge as linked above, and then install R packages through this following these instructions for R with conda.\nrenv: the reproducible environment package for R has some very nice introductory documentation.\nPackage management in Julia\nPkg: Pkg is Julia’s built-in package manager.\n\n\n\n\nOk, so we’ve looked at the basic behind-the-scenes of what dependency management is, and some of the different options available. But how do you retroactively apply dependency management to an existing messy code project?. While we can’t record things that we’ve done in the past, we can start from now.\n\n\nWhile I’ve mentioned a whole host of options for Python package managers above, I’m going to work through some basic instructions for just three options: conda (installed via miniforge), pixi, and uv.\n\ncondapixiuv\n\n\nIf you have never before used a package management system, or work in science, conda might be the best choice for you. See this conda blogpost (Murphy Quinlan 2024) for useful links to installation guides, and an in-depth use guide.\nConda is very widely used and recognised, especially amongst researchers in science and medical fields.\n\nMiniforge repository\nMiniforge License\nStep-by-step Miniforge tutorial\n\n\n\nPixi is great if you are using a lot of conda and PyPI packages together (which can get messy); it also can work with a pyproject.toml file if you plan on packaging your code at some point. It is very fast.\nHave a read through this blog post on testing pixi (Ma 2024).\n\nPixi repository\nPixi License\nPixi Python tutorial\n\n\n\nTab content\n\n\n\n\n\n\nScroll through all the scripts you use in your project, and record all the packages that you call as imports across these different Python files and Jupyter notebooks (*.py and *.ipynb files).\nFor example, I have a series of Python files in my project folder with the following first few lines:\n# file1.ipynb\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# file2.py\nimport numpy as np\nimport pandas as pd\nMy list of jotted down dependencies are then:\n\nnumpy\nmatplotlib 1\nseaborn\npandas\njupyter 2\n\n\nPlain system PythonAn old environment\n\n\nIf until now you’ve been running your Python programs directly using your system’s Python (so you have never set up an environment), let’s just see what versions of packages your system is using.\nFirst, check the version of Python by running the following from the command line:\npython --version\nFrom the command line, run the following (replacing numpy with your dependencies in turn):\npython -c \"import numpy; print(numpy.__version__)\"\nThis gives you an idea of what version of each of these dependencies your system has been using. Copy these down.\n\n\nIf you have been using an environment but it’s become messy or broken and you want to start over, there are a few different options for you.\nDepending on the package management software you used to build the environment, the method to export the environment will be different. Search your package manager software name and “export dependencies” to see how to do this automatically.\nAlternatively, if you’ve already manually collected the libraries used, and you know there’s a lot of bloat in your existing environment (lot’s of unused packages), you can instead activate the environment and then from the command line run the following (replacing numpy with your dependencies in turn):\npython -c \"import numpy; print(numpy.__version__)\"\nAlso check the version of Python by running the following from the command line (again, with the environment active):\npython --version\nThis gives you an idea of what version of each of these dependencies your system has been using. Copy these down.\n\n\n\n\n\n\nNow that you know what packages you want to include in your environment, you can create a new environment. In the last step, we recorded the versions of different libraries we were using: right now, we’re not going to worry about pinning our versions to match our previous set-up unless something goes wrong. We’ll keep our manually recorded version numbers to hand just-in-case.\n\ncondapixiuv\n\n\nTo create a new conda environment, you need to create an environment.yml file. This will contain a list of your dependencies, like this:\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - numpy\n  - matplotlib\n  - pandas\n  - seaborn\n  - jupyter\nPut this in your project folder. I’ve just pinned the Python version as an example of how to pin a specific version. Then, from the command line (within this folder), run:\nconda env create -f environment.yml\nIf you need to add pip dependencies, then your environment.yml will look like this:\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - numpy\n  - matplotlib\n  - pandas\n  - seaborn\n  - jupyter\n  - pip\n  - pip:\n    - black\nNote: mixing conda and pip will cause issues; please read this post on mixing conda and pip (Murphy Quinlan 2024).\n\n\nTo create a new pixi environment for your pre-existing project, from inside the project directory run:\npixi init\nThis will create a file called pixi.toml that will look something like this:\n[project]\nauthors = [\"\"]\nchannels = [\"conda-forge\"]\ndescription = \"Add a short description here\"\nname = \"folder-name\"\nplatforms = [\"linux-64\"]\nversion = \"0.1.0\"\n\n[tasks]\n\n[dependencies]\n\nQuick addManual addPyPI dependencies\n\n\nWe can add pinned and unpinned dependencies from the command line:\npixi add python=3.12 numpy matplotlib pandas seaborn jupyter\nThis will fill in the dependencies section of our pixi.toml file with some automatically assigned version restrictions (given our pinned Python version):\n[dependencies]\npython = \"3.12.*\"\nnumpy = \"&gt;=2.2.1,&lt;3\"\nmatplotlib = \"&gt;=3.10.0,&lt;4\"\npandas = \"&gt;=2.2.3,&lt;3\"\nseaborn = \"&gt;=0.13.2,&lt;0.14\"\njupyter = \"&gt;=1.1.1,&lt;2\"\n\n\nWe can also fill in our dependencies (with as-of-yet no pinned versions except for Python as an example):\n[dependencies]\npython = \"3.12.*\"\nnumpy = \"*\"\nmatplotlib = \"*\"\npandas = \"*\"\nseaborn = \"*\"\njupyter = \"*\"\n\n\nIf you need any pip/PyPI dependencies, then simply add this section to the file:\n[pypi-dependencies]\nblack = \"*\"\nAlternatively, run this from the command line:\npixi add --pypi black\nwhich will add the following to your pixi.toml:\n[pypi-dependencies]\nblack = \"&gt;=24.10.0, &lt;25\"\n\n\n\nSave any changes to your pixi.toml file, then back in the command line in the folder containing your pixi.toml, run the following:\npixi install\nThis will install the listed packages and create a pixi.lock file.\nRead the Pixi docs on lockfiles.\n\n\nTab content\n\n\n\n\n\n\n\ncondapixiuv\n\n\nTo activate your conda environment, from the command line run:\nconda activate my-env-name\nand then either launch your Jupyter notebook or run your Python script.\n\n\nFrom the project folder, run:\npixi shell\nand then either launch your Jupyter notebook or run your Python script.\n\n\nTab content",
+    "crumbs": [
+      "Home",
+      "Part 1",
+      "Dependencies"
+    ]
   },
   {
-    "objectID": "index.html#part-1-working-with-existing-projects",
-    "href": "index.html#part-1-working-with-existing-projects",
-    "title": "Research Software Engineering: a friendly introduction",
-    "section": "Part 1: working with existing projects",
-    "text": "Part 1: working with existing projects\nIn this section, we use an imaginary messy project to learn about techniques to tidy up your code. We apply the acronym DeReLiCT to help you prevent your code from falling apart, and introduce Dependency Management, Repositories and version control, Licenses and Citations, and Testing.\nWe talk through techniques you can apply if you’ve only got half an hour to spare and desperately need to improve your messy codebase, and how to strategically apply techniques if you have a little bit longer.\nWe will work through some example messy code and see how to apply some of these techniques to improve its quality as a piece of research software."
+    "objectID": "existing-projects/dependencies.html#package-management-for-python",
+    "href": "existing-projects/dependencies.html#package-management-for-python",
+    "title": "Dependencies",
+    "section": "",
+    "text": "In Python, there are lots of different ways to install and manage packages and dependencies. These different tools generally involve using virtual environments in order to keep the dependencies for different projects separate and tidy. Some package installation and management tools include:\n\nConda/Mamba\n\nYou can install conda with Miniforge\n\npip and Pipenv\npixi\nPoetry\nuv\n\nYou can read more about Python package management tool recommendations here. The package management tool you use will vary depending on whether you want to build your code into a package itself, or are relying primarily on external libraries. Some of these package managers include entire workflows for building and publishing Python packages, while others focus on organising pre-existing packages.\n\n\nNote that I do not have as extensive experience managing projects, dependencies and packages in the following languages so please proceed with caution.\nPackage management in R\nconda for R: you can install conda via Miniforge as linked above, and then install R packages through this following these instructions for R with conda.\nrenv: the reproducible environment package for R has some very nice introductory documentation.\nPackage management in Julia\nPkg: Pkg is Julia’s built-in package manager.",
+    "crumbs": [
+      "Home",
+      "Part 1",
+      "Dependencies"
+    ]
   },
   {
-    "objectID": "index.html#part-2-starting-a-new-project",
-    "href": "index.html#part-2-starting-a-new-project",
-    "title": "Research Software Engineering: a friendly introduction",
-    "section": "Part 2: Starting a new project",
-    "text": "Part 2: Starting a new project\nIn this section of the module, we will take stock of all the techniques we learned in the first section, and talk through what might have made our lives easier if we had been able to make decisions from the very start of the coding project.\nWe talk through different ways of organising our code projects, and create some workflows to apply going forward when writing research software."
+    "objectID": "existing-projects/dependencies.html#dependencies-step-by-step-for-existing-projects-python",
+    "href": "existing-projects/dependencies.html#dependencies-step-by-step-for-existing-projects-python",
+    "title": "Dependencies",
+    "section": "",
+    "text": "Ok, so we’ve looked at the basic behind-the-scenes of what dependency management is, and some of the different options available. But how do you retroactively apply dependency management to an existing messy code project?. While we can’t record things that we’ve done in the past, we can start from now.\n\n\nWhile I’ve mentioned a whole host of options for Python package managers above, I’m going to work through some basic instructions for just three options: conda (installed via miniforge), pixi, and uv.\n\ncondapixiuv\n\n\nIf you have never before used a package management system, or work in science, conda might be the best choice for you. See this conda blogpost (Murphy Quinlan 2024) for useful links to installation guides, and an in-depth use guide.\nConda is very widely used and recognised, especially amongst researchers in science and medical fields.\n\nMiniforge repository\nMiniforge License\nStep-by-step Miniforge tutorial\n\n\n\nPixi is great if you are using a lot of conda and PyPI packages together (which can get messy); it also can work with a pyproject.toml file if you plan on packaging your code at some point. It is very fast.\nHave a read through this blog post on testing pixi (Ma 2024).\n\nPixi repository\nPixi License\nPixi Python tutorial\n\n\n\nTab content\n\n\n\n\n\n\nScroll through all the scripts you use in your project, and record all the packages that you call as imports across these different Python files and Jupyter notebooks (*.py and *.ipynb files).\nFor example, I have a series of Python files in my project folder with the following first few lines:\n# file1.ipynb\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# file2.py\nimport numpy as np\nimport pandas as pd\nMy list of jotted down dependencies are then:\n\nnumpy\nmatplotlib 1\nseaborn\npandas\njupyter 2\n\n\nPlain system PythonAn old environment\n\n\nIf until now you’ve been running your Python programs directly using your system’s Python (so you have never set up an environment), let’s just see what versions of packages your system is using.\nFirst, check the version of Python by running the following from the command line:\npython --version\nFrom the command line, run the following (replacing numpy with your dependencies in turn):\npython -c \"import numpy; print(numpy.__version__)\"\nThis gives you an idea of what version of each of these dependencies your system has been using. Copy these down.\n\n\nIf you have been using an environment but it’s become messy or broken and you want to start over, there are a few different options for you.\nDepending on the package management software you used to build the environment, the method to export the environment will be different. Search your package manager software name and “export dependencies” to see how to do this automatically.\nAlternatively, if you’ve already manually collected the libraries used, and you know there’s a lot of bloat in your existing environment (lot’s of unused packages), you can instead activate the environment and then from the command line run the following (replacing numpy with your dependencies in turn):\npython -c \"import numpy; print(numpy.__version__)\"\nAlso check the version of Python by running the following from the command line (again, with the environment active):\npython --version\nThis gives you an idea of what version of each of these dependencies your system has been using. Copy these down.\n\n\n\n\n\n\nNow that you know what packages you want to include in your environment, you can create a new environment. In the last step, we recorded the versions of different libraries we were using: right now, we’re not going to worry about pinning our versions to match our previous set-up unless something goes wrong. We’ll keep our manually recorded version numbers to hand just-in-case.\n\ncondapixiuv\n\n\nTo create a new conda environment, you need to create an environment.yml file. This will contain a list of your dependencies, like this:\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - numpy\n  - matplotlib\n  - pandas\n  - seaborn\n  - jupyter\nPut this in your project folder. I’ve just pinned the Python version as an example of how to pin a specific version. Then, from the command line (within this folder), run:\nconda env create -f environment.yml\nIf you need to add pip dependencies, then your environment.yml will look like this:\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - numpy\n  - matplotlib\n  - pandas\n  - seaborn\n  - jupyter\n  - pip\n  - pip:\n    - black\nNote: mixing conda and pip will cause issues; please read this post on mixing conda and pip (Murphy Quinlan 2024).\n\n\nTo create a new pixi environment for your pre-existing project, from inside the project directory run:\npixi init\nThis will create a file called pixi.toml that will look something like this:\n[project]\nauthors = [\"\"]\nchannels = [\"conda-forge\"]\ndescription = \"Add a short description here\"\nname = \"folder-name\"\nplatforms = [\"linux-64\"]\nversion = \"0.1.0\"\n\n[tasks]\n\n[dependencies]\n\nQuick addManual addPyPI dependencies\n\n\nWe can add pinned and unpinned dependencies from the command line:\npixi add python=3.12 numpy matplotlib pandas seaborn jupyter\nThis will fill in the dependencies section of our pixi.toml file with some automatically assigned version restrictions (given our pinned Python version):\n[dependencies]\npython = \"3.12.*\"\nnumpy = \"&gt;=2.2.1,&lt;3\"\nmatplotlib = \"&gt;=3.10.0,&lt;4\"\npandas = \"&gt;=2.2.3,&lt;3\"\nseaborn = \"&gt;=0.13.2,&lt;0.14\"\njupyter = \"&gt;=1.1.1,&lt;2\"\n\n\nWe can also fill in our dependencies (with as-of-yet no pinned versions except for Python as an example):\n[dependencies]\npython = \"3.12.*\"\nnumpy = \"*\"\nmatplotlib = \"*\"\npandas = \"*\"\nseaborn = \"*\"\njupyter = \"*\"\n\n\nIf you need any pip/PyPI dependencies, then simply add this section to the file:\n[pypi-dependencies]\nblack = \"*\"\nAlternatively, run this from the command line:\npixi add --pypi black\nwhich will add the following to your pixi.toml:\n[pypi-dependencies]\nblack = \"&gt;=24.10.0, &lt;25\"\n\n\n\nSave any changes to your pixi.toml file, then back in the command line in the folder containing your pixi.toml, run the following:\npixi install\nThis will install the listed packages and create a pixi.lock file.\nRead the Pixi docs on lockfiles.\n\n\nTab content\n\n\n\n\n\n\n\ncondapixiuv\n\n\nTo activate your conda environment, from the command line run:\nconda activate my-env-name\nand then either launch your Jupyter notebook or run your Python script.\n\n\nFrom the project folder, run:\npixi shell\nand then either launch your Jupyter notebook or run your Python script.\n\n\nTab content",
+    "crumbs": [
+      "Home",
+      "Part 1",
+      "Dependencies"
+    ]
+  },
+  {
+    "objectID": "existing-projects/dependencies.html#footnotes",
+    "href": "existing-projects/dependencies.html#footnotes",
+    "title": "Dependencies",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWe don’t specify the module (the pyplot part of matplotlib.pyplot) in our requirements.↩︎\nWhile jupyter isn’t imported in our files, we are using a Jupyter Notebook (file1.ipynb required Jupyter) so this must be included in our dependencies.↩︎",
+    "crumbs": [
+      "Home",
+      "Part 1",
+      "Dependencies"
+    ]
   },
   {
     "objectID": "existing-projects/intro.html",
     "href": "existing-projects/intro.html",
     "title": "Preventing DeReLiCT code",
     "section": "",
-    "text": "Oftentimes, especially when doing research, we begin the coding portion of a project without that much planning.\nIn some projects, coding is an analysis tool: it lets us investigate data, perform statistical calculations, and create plots and visualisations. We might write snippets of code in an interactive notebook1",
+    "text": "Oftentimes, especially when doing research, we begin the coding portion of a project without that much planning.\nIn some projects, coding is an analysis tool: it lets us investigate data, perform statistical calculations, and create plots and visualisations. We might write snippets of code in an interactive notebook1 and quickly prototype. These snippets (or a tidied-up subset) might end up shared in supplementary information alongside a published research article. In other situations, code might be a more foundational part of the project, for example when building a numerical model. This code may be written more formally, and you might expect it to be shared or used more widely. Another case is where code is a tool for sharing and presenting our results: this can be again for building visualisations (but this time, publication-worthy, polished visualisations) or can scale up as far as web-apps or dashboards.\nThe requirements for each of these situations is quite different, and it can be very challenging to manage code across these: in many situations, you might need to dip in to more than one of these categories.\nIn part 2 of this course, we’ll dive in to strategies for setting a project up for success from the start, but in this section we are going to look at tools and approaches that you can apply to an already-existing, stressfully messy project. While good planning is fantastically useful, and of course on completing this course you’ll implement it going forward, it’s never too late to add some tools to your project to help it run more smoothly.\n\n\nBecause I love an acronym, and because I find having a checklist makes things much less overwhelming, I’ve distilled down what I think are the key features of software development into five categories:\n\nDependencies\nRepository\nLicense\nCitation\nTesting\n\n\n\n\n\n\n\nWe know the feeling. If your code is falling down around you and you need some quick help right now, then let’s just look at these two points:\n\nDependencies\n\nWrite down a list of the libraries you’ve used in your code in a requirements.txt file.\nIf you have a minute more, let’s set up a quick virtual environment with conda - if you have Miniforge installed already, you can do this in five minutes. See a walkthrough here: “art of conda” blog post.\n\nRepository\n\nLet’s initialise a git repository in your working folder. You’ll need to have git installed on your system; from your project directory, run the following from the command line:\ngit init\nIf this sounds nonsensical right now, do not fear! It might take a little bit longer than ten minutes, but if you read through the Dependencies and Repository section you will understand better what’s going on in both these sections!",
+    "crumbs": [
+      "Home",
+      "Part 1",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "existing-projects/intro.html#derelict-code",
+    "href": "existing-projects/intro.html#derelict-code",
+    "title": "Preventing DeReLiCT code",
+    "section": "",
+    "text": "Because I love an acronym, and because I find having a checklist makes things much less overwhelming, I’ve distilled down what I think are the key features of software development into five categories:\n\nDependencies\nRepository\nLicense\nCitation\nTesting",
+    "crumbs": [
+      "Home",
+      "Part 1",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "existing-projects/intro.html#help-ive-only-got-10-minutes-to-improve-my-code",
+    "href": "existing-projects/intro.html#help-ive-only-got-10-minutes-to-improve-my-code",
+    "title": "Preventing DeReLiCT code",
+    "section": "",
+    "text": "We know the feeling. If your code is falling down around you and you need some quick help right now, then let’s just look at these two points:\n\nDependencies\n\nWrite down a list of the libraries you’ve used in your code in a requirements.txt file.\nIf you have a minute more, let’s set up a quick virtual environment with conda - if you have Miniforge installed already, you can do this in five minutes. See a walkthrough here: “art of conda” blog post.\n\nRepository\n\nLet’s initialise a git repository in your working folder. You’ll need to have git installed on your system; from your project directory, run the following from the command line:\ngit init\nIf this sounds nonsensical right now, do not fear! It might take a little bit longer than ten minutes, but if you read through the Dependencies and Repository section you will understand better what’s going on in both these sections!",
     "crumbs": [
       "Home",
       "Part 1",
@@ -44,12 +95,68 @@
     "href": "existing-projects/intro.html#footnotes",
     "title": "Preventing DeReLiCT code",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\ninteractive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.↩︎",
+    "text": "Footnotes\n\n\nInteractive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.↩︎",
     "crumbs": [
       "Home",
       "Part 1",
       "Introduction"
     ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Software Engineering: a friendly introduction",
+    "section": "",
+    "text": "These module notes aim to provide you with a friendly introduction to Research Software Engineering or Research Software Development. This is an evolution of the course notes Sustainable Software Development (Murphy Quinlan 2024), intended to be more flexible, accessible, and widely usable both for self-directed, asynchronous learning and for guided instruction.\nThis course introduces concepts such as testing, managing dependencies, version control and repositories, that will help you to keep your work under control. This course uses Python code as an example; however, the concepts discussed are largely language agnostic. Where possible, I have added code examples, links to resources, or equivalent package names for other languages; I will supplement this over time."
+  },
+  {
+    "objectID": "index.html#help-ive-only-got-10-minutes-to-improve-my-code",
+    "href": "index.html#help-ive-only-got-10-minutes-to-improve-my-code",
+    "title": "Research Software Engineering: a friendly introduction",
+    "section": "Help! I’ve only got 10 minutes to improve my code",
+    "text": "Help! I’ve only got 10 minutes to improve my code\nWe know the feeling. If your code is falling down around you and you need some quick help right now, visit Derelict code"
+  },
+  {
+    "objectID": "index.html#module-structure",
+    "href": "index.html#module-structure",
+    "title": "Research Software Engineering: a friendly introduction",
+    "section": "Module structure",
+    "text": "Module structure\nThis module is split into two parts, in order to introduce techniques in a sensible way and to not overwhelm you.\n\nPart 1: working with existing projects\nIn this section, we use an imaginary messy project to learn about techniques to tidy up your code. We apply the acronym DeReLiCT to help you prevent your code from falling apart, and introduce Dependency Management, Repositories and version control, Licenses and Citations, and Testing.\nWe talk through techniques you can apply if you’ve only got half an hour to spare and desperately need to improve your messy codebase, and how to strategically apply techniques if you have a little bit longer.\nWe will work through some example messy code and see how to apply some of these techniques to improve its quality as a piece of research software.\n\n\nPart 2: Starting a new project\nIn this section of the module, we will take stock of all the techniques we learned in the first section, and talk through what might have made our lives easier if we had been able to make decisions from the very start of the coding project.\nWe talk through different ways of organising our code projects, and create some workflows to apply going forward when writing research software."
+  },
+  {
+    "objectID": "existing-projects/presentations/dep-pres.html#what-are-dependencies",
+    "href": "existing-projects/presentations/dep-pres.html#what-are-dependencies",
+    "title": "Managing dependencies",
+    "section": "What are dependencies?",
+    "text": "What are dependencies?\nDependencies are the versions of various different modules, packages, or software that your research code depends on: all of your imports.\n\n\n\n\nDon’t be like Ruby and Avi! Record your dependencies.\n\nImage CC BY Candace Savonen, retrieved from Reproducibility in Cancer Informatics."
+  },
+  {
+    "objectID": "existing-projects/presentations/dep-pres.html#general-rules-for-dependencies",
+    "href": "existing-projects/presentations/dep-pres.html#general-rules-for-dependencies",
+    "title": "Managing dependencies",
+    "section": "General Rules for Dependencies",
+    "text": "General Rules for Dependencies\nManaging dependencies is something many, many people find complicated and difficult. Let’s start with some key ideas to simplify things.\nNYU Libraries provide some straightforward guidance that is language agnostic:\n\nUse dependencies wisely and sparingly: don’t import dependencies you don’t actually use, and try to stick to libraries that have robust and stable releases.\nUse a package manager of some form: package management software, virtual environments and containers help to avoid conflicts and incompatibility errors between packages.\nRecord your dependencies in a metadata file: package managers will often do this automatically for you; this file should be both human and machine readable."
+  },
+  {
+    "objectID": "existing-projects/presentations/dep-pres.html#package-management-software",
+    "href": "existing-projects/presentations/dep-pres.html#package-management-software",
+    "title": "Managing dependencies",
+    "section": "Package management software",
+    "text": "Package management software\nPackage management software usually:\n\n\nProvides a way for you to create an environment:\n\nA code project environment will contain a selection of relevant libraries, with specific versions.\nThis is kept separate from other project environments.\nThis allows you to use different versions of libraries for different projects.\n\nProvides a way for you to export your environment:\n\nThis allows you to specify the exact libraries and library versions that were used to generate a set of results.\nThis makes it easier for others to use your work and built on it, and reproduce your code environment.\nThis saves you having to manually record library versions that you are using."
+  },
+  {
+    "objectID": "existing-projects/presentations/dep-pres.html#how-do-you-pick",
+    "href": "existing-projects/presentations/dep-pres.html#how-do-you-pick",
+    "title": "Managing dependencies",
+    "section": "How do you pick?",
+    "text": "How do you pick?\n1. License\n\nDoes the package manager have an open-source license?\n\n2. Community\n\nWhat solution does your research group use? Does your supervisor have suggestions?\nWhat option can you find support for?\nWhat do researchers in your field use?"
+  },
+  {
+    "objectID": "existing-projects/presentations/dep-pres.html#where-to-next",
+    "href": "existing-projects/presentations/dep-pres.html#where-to-next",
+    "title": "Managing dependencies",
+    "section": "Where to next?",
+    "text": "Where to next?\nIf you want some more background information and theory:\n\nReturn to the dependencies section of the course notes and keep reading.\n\nIf you want to learn by doing, get straight into it by following the instructions here:\n\nJump right in an start using conda by following this conda use blog post."
   },
   {
     "objectID": "existing-projects/testing.html",

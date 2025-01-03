@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -38,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-867ed020ad6617227ff8aa943f37a81e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e3bb5f2d30122ae644414fbe04fdb5ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,10 +102,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -114,21 +147,13 @@ ul.task-list li input[type="checkbox"] {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../existing-projects/intro.html">Part 1</a></li><li class="breadcrumb-item"><a href="../existing-projects/intro.html">Introduction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -146,6 +171,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../existing-projects/dependencies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dependencies</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -158,12 +189,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#preventing-derelict-code" id="toc-preventing-derelict-code" class="nav-link active" data-scroll-target="#preventing-derelict-code">Preventing DeReLiCT code</a></li>
+  <li><a href="#preventing-derelict-code" id="toc-preventing-derelict-code" class="nav-link active" data-scroll-target="#preventing-derelict-code">Preventing DeReLiCT code</a>
+  <ul class="collapse">
+  <li><a href="#derelict-code" id="toc-derelict-code" class="nav-link" data-scroll-target="#derelict-code">DeReLiCT Code</a></li>
+  <li><a href="#ten-minute-sos" id="toc-ten-minute-sos" class="nav-link" data-scroll-target="#ten-minute-sos">Ten minute SOS</a></li>
+  <li><a href="#help-ive-only-got-10-minutes-to-improve-my-code" id="toc-help-ive-only-got-10-minutes-to-improve-my-code" class="nav-link" data-scroll-target="#help-ive-only-got-10-minutes-to-improve-my-code">Help! I’ve only got 10 minutes to improve my code</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../existing-projects/intro.html">Part 1</a></li><li class="breadcrumb-item"><a href="../existing-projects/intro.html">Introduction</a></li></ol></nav></header>
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../existing-projects/intro.html">Part 1</a></li><li class="breadcrumb-item"><a href="../existing-projects/intro.html">Introduction</a></li></ol></nav></header>
 
 
 
@@ -171,7 +207,38 @@ ul.task-list li input[type="checkbox"] {
 <section id="preventing-derelict-code" class="level1">
 <h1>Preventing DeReLiCT code</h1>
 <p>Oftentimes, especially when doing research, we begin the coding portion of a project without that much planning.</p>
-<p>In some projects, coding is an analysis tool: it lets us investigate data, perform statistical calculations, and create plots and visualisations. We might write snippets of code in an interactive notebook<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In some projects, coding is an analysis tool: it lets us investigate data, perform statistical calculations, and create plots and visualisations. We might write snippets of code in an interactive notebook<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and quickly prototype. These snippets (or a tidied-up subset) might end up shared in supplementary information alongside a published research article. In other situations, code might be a more foundational part of the project, for example when building a numerical model. This code may be written more formally, and you might expect it to be shared or used more widely. Another case is where code is a tool for sharing and presenting our results: this can be again for building visualisations (but this time, publication-worthy, polished visualisations) or can scale up as far as web-apps or dashboards.</p>
+<p>The <strong>requirements</strong> for each of these situations is quite different, and it can be very challenging to manage code across these: in many situations, you might need to dip in to more than one of these categories.</p>
+<p>In part 2 of this course, we’ll dive in to strategies for setting a project up for success from the start, but in this section we are going to look at tools and approaches that you can apply to an already-existing, stressfully messy project. While good planning is fantastically useful, and <em>of course on completing this course you’ll implement it going forward</em>, it’s never too late to add some tools to your project to help it run more smoothly.</p>
+<section id="derelict-code" class="level2">
+<h2 class="anchored" data-anchor-id="derelict-code">DeReLiCT Code</h2>
+<p>Because I love an acronym, and because I find having a checklist makes things much less overwhelming, I’ve distilled down what I think are the key features of software development into five categories:</p>
+<ol type="1">
+<li><strong>De</strong>pendencies</li>
+<li><strong>Re</strong>pository</li>
+<li><strong>Li</strong>cense</li>
+<li><strong>C</strong>itation</li>
+<li><strong>Te</strong>sting</li>
+</ol>
+</section>
+<section id="ten-minute-sos" class="level2">
+<h2 class="anchored" data-anchor-id="ten-minute-sos">Ten minute SOS</h2>
+</section>
+<section id="help-ive-only-got-10-minutes-to-improve-my-code" class="level2 box-lp">
+<h2 class="anchored" data-anchor-id="help-ive-only-got-10-minutes-to-improve-my-code">Help! I’ve only got 10 minutes to improve my code</h2>
+<p>We know the feeling. If your code is falling down around you and you need some quick help right now, then let’s just look at these two points:</p>
+<ol type="1">
+<li><strong>De</strong>pendencies</li>
+</ol>
+<p>Write down a list of the libraries you’ve used in your code in a requirements.txt file.</p>
+<p>If you have a minute more, let’s set up a quick virtual environment with conda - if you have <a href="https://github.com/conda-forge/miniforge">Miniforge</a> installed already, you can do this in five minutes. See a walkthrough here: <a href="https://murphyqm.github.io/posts/2024-11-27-conda-envs/">“art of conda” blog post</a>.</p>
+<ol start="2" type="1">
+<li><strong>Re</strong>pository</li>
+</ol>
+<p>Let’s initialise a <code>git</code> repository in your working folder. You’ll need to have <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"><code>git</code> installed on your system</a>; from your project directory, run the following from the command line:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If this sounds nonsensical right now, do not fear! It might take a little bit longer than ten minutes, but if you read through the <em>De</em>pendencies and <strong>Re</strong>pository section you will understand better what’s going on in both these sections!</p>
+</section>
 
 
 </section>
@@ -180,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>interactive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Interactive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
