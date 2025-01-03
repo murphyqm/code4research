@@ -4,6 +4,8 @@ project:
 
 website:
   title: "code4research"
+  back-to-top-navigation: true
+  page-navigation: true
   sidebar:
     collapse-level: 1
     border: false
@@ -22,6 +24,10 @@ website:
         text: Home
       - about.qmd
       - existing-projects/testing.qmd
+  page-footer:
+    background: secondary
+    left: Maeve Murphy Quinlan, 2024. Opinions my own.  [![](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png){width=60}](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+    right: This website is built with [GitHub](https://github.com/murphyqm/code4research){target=_blank} and [Quarto](https://quarto.org/){target=_blank}
 
 
 format:

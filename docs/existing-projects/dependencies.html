@@ -84,6 +84,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../existing-projects/intro.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -92,7 +93,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e3bb5f2d30122ae644414fbe04fdb5ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8f0d70d5749f5a4a066862051ca7b45f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -221,6 +222,7 @@ div.csl-indent {
   <li><a href="#step-1-manually-record-what-libraries-you-use" id="toc-step-1-manually-record-what-libraries-you-use" class="nav-link" data-scroll-target="#step-1-manually-record-what-libraries-you-use">Step 1: Manually record what libraries you use</a></li>
   <li><a href="#step-2-create-a-new-environment" id="toc-step-2-create-a-new-environment" class="nav-link" data-scroll-target="#step-2-create-a-new-environment">Step 2: Create a new environment</a></li>
   <li><a href="#step-3-activate-the-environment" id="toc-step-3-activate-the-environment" class="nav-link" data-scroll-target="#step-3-activate-the-environment">Step 3: Activate the environment</a></li>
+  <li><a href="#step-4-export-your-environment" id="toc-step-4-export-your-environment" class="nav-link" data-scroll-target="#step-4-export-your-environment">Step 4: Export your environment</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -453,6 +455,29 @@ div.csl-indent {
 </div>
 </div>
 </div>
+</section>
+<section id="step-4-export-your-environment" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-export-your-environment">Step 4: Export your environment</h3>
+<p>Exporting and recording your environment is an important step in ensuring reproducibility and reusability of your code.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="package">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">conda</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">pixi</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">uv</a></li></ul>
+<div class="tab-content" data-group="package">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p>There are a few different options when it comes to exporting your conda environment. Read more <a href="https://murphyqm.github.io/posts/2024-11-27-conda-envs/#exporting-a-conda-env">information here on the different ways to export</a>.</p>
+<p>To export a detailed record of your environment for reproducibility, use the following command:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> env-record.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note: this might not be installable on a different machine due to build dependencies - see <a href="https://murphyqm.github.io/posts/2024-11-27-conda-envs/#exporting-a-conda-env">this post for more details on exporting</a>.</p>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p>From the project folder, run:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> shell</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and then either launch your Jupyter notebook or run your Python script.</p>
+</div>
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+<p>Tab content</p>
+</div>
+</div>
+</div>
 
 
 
@@ -461,7 +486,7 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Ma2024-gi" class="csl-entry" role="listitem">
 Ma, Eric J. 2024. <span>“<span class="nocase">It’s time to try out pixi!</span>”</span> <em>Eric J. Ma’s Blog</em>, August.
 </div>
@@ -892,7 +917,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../existing-projects/intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Maeve Murphy Quinlan, 2024. Opinions my own. <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" class="img-fluid" width="60"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/murphyqm/code4research" target="_blank">GitHub</a> and <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+  </div>
+</footer>
 
 
 

@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../existing-projects/dependencies.html" rel="next">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e3bb5f2d30122ae644414fbe04fdb5ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8f0d70d5749f5a4a066862051ca7b45f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -193,7 +194,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#derelict-code" id="toc-derelict-code" class="nav-link" data-scroll-target="#derelict-code">DeReLiCT Code</a></li>
   <li><a href="#ten-minute-sos" id="toc-ten-minute-sos" class="nav-link" data-scroll-target="#ten-minute-sos">Ten minute SOS</a></li>
-  <li><a href="#help-ive-only-got-10-minutes-to-improve-my-code" id="toc-help-ive-only-got-10-minutes-to-improve-my-code" class="nav-link" data-scroll-target="#help-ive-only-got-10-minutes-to-improve-my-code">Help! I’ve only got 10 minutes to improve my code</a></li>
+  <li><a href="#help-ive-only-got-10-minutes-to-improve-my-code" id="toc-help-ive-only-got-10-minutes-to-improve-my-code" class="nav-link" data-scroll-target="#help-ive-only-got-10-minutes-to-improve-my-code">Help! I’ve only got 10 minutes to improve my code</a>
+  <ul class="collapse">
+  <li><a href="#dependencies" id="toc-dependencies" class="nav-link" data-scroll-target="#dependencies">1. <strong>De</strong>pendencies</a></li>
+  <li><a href="#repository" id="toc-repository" class="nav-link" data-scroll-target="#repository">2. <strong>Re</strong>pository</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -227,24 +232,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="help-ive-only-got-10-minutes-to-improve-my-code" class="level2 box-lp">
 <h2 class="anchored" data-anchor-id="help-ive-only-got-10-minutes-to-improve-my-code">Help! I’ve only got 10 minutes to improve my code</h2>
 <p>We know the feeling. If your code is falling down around you and you need some quick help right now, then let’s just look at these two points:</p>
-<ol type="1">
-<li><strong>De</strong>pendencies</li>
-</ol>
+<section id="dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="dependencies">1. <strong>De</strong>pendencies</h3>
 <p>Write down a list of the libraries you’ve used in your code in a requirements.txt file.</p>
 <p>If you have a minute more, let’s set up a quick virtual environment with conda - if you have <a href="https://github.com/conda-forge/miniforge">Miniforge</a> installed already, you can do this in five minutes. See a walkthrough here: <a href="https://murphyqm.github.io/posts/2024-11-27-conda-envs/">“art of conda” blog post</a>.</p>
-<ol start="2" type="1">
-<li><strong>Re</strong>pository</li>
-</ol>
+</section>
+<section id="repository" class="level3">
+<h3 class="anchored" data-anchor-id="repository">2. <strong>Re</strong>pository</h3>
 <p>Let’s initialise a <code>git</code> repository in your working folder. You’ll need to have <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"><code>git</code> installed on your system</a>; from your project directory, run the following from the command line:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If this sounds nonsensical right now, do not fear! It might take a little bit longer than ten minutes, but if you read through the <em>De</em>pendencies and <strong>Re</strong>pository section you will understand better what’s going on in both these sections!</p>
+<p>If this sounds nonsensical right now, do not fear! It might take a little bit longer than ten minutes, but if you read through the <strong>De</strong>pendencies and <strong>Re</strong>pository section you will understand better what’s going on in both these sections!</p>
+</section>
 </section>
 
 
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Interactive notebooks, such as Jupyter notebooks for Python and R, allow for code and code output to be embedded in a file alongside text, images and other content. Notebooks are often used for rapid prototyping and plotting, as you can quickly see results alongside your code.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -667,7 +672,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../existing-projects/dependencies.html" class="pagination-link" aria-label="Dependencies">
+        <span class="nav-page-text">Dependencies</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Maeve Murphy Quinlan, 2024. Opinions my own. <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" class="img-fluid" width="60"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/murphyqm/code4research" target="_blank">GitHub</a> and <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+  </div>
+</footer>
 
 
 

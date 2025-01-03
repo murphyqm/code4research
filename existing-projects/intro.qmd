@@ -30,13 +30,13 @@ Because I love an acronym, and because I find having a checklist makes things mu
 We know the feeling. If your code is falling down around you and you need some quick help
 right now, then let's just look at these two points:
 
-1. **De**pendencies
+### 1. **De**pendencies
 
 Write down a list of the libraries you've used in your code in a requirements.txt file.
 
 If you have a minute more, let's set up a quick virtual environment with conda - if you have [Miniforge](https://github.com/conda-forge/miniforge) installed already, you can do this in five minutes. See a walkthrough here: ["art of conda" blog post](https://murphyqm.github.io/posts/2024-11-27-conda-envs/).
 
-2. **Re**pository
+### 2. **Re**pository
 
 Let's initialise a `git` repository in your working folder. You'll need to have [`git` installed on your system](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git); from your project directory, run the following from the command line:
 
@@ -44,7 +44,7 @@ Let's initialise a `git` repository in your working folder. You'll need to have 
 git init
 ```
 
-If this sounds nonsensical right now, do not fear! It might take a little bit longer than ten minutes, but if you read through the *De*pendencies and **Re**pository section you will understand better what's going on in both these sections!
+If this sounds nonsensical right now, do not fear! It might take a little bit longer than ten minutes, but if you read through the **De**pendencies and **Re**pository section you will understand better what's going on in both these sections!
 
 :::
 

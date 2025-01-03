@@ -4,6 +4,8 @@ title: "Research Software Engineering: a friendly introduction"
 
 These module notes aim to provide you with a friendly introduction to *Research Software Engineering* or *Research Software Development*. This is an evolution of the course notes [Sustainable Software Development](https://software-dev.streamlit.app/) [@Murphy-Quinlan2024-ba], intended to be more flexible, accessible, and widely usable both for self-directed, asynchronous learning and for guided instruction.
 
+This project is licensed under the open-source [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) and the source code can be found on [GitHub](https://github.com/murphyqm/code4research). This website was built with [Quarto](https://quarto.org/).
+
 :::{.callout-note}
 # What is Research Software Engineering/Development anyway?
 
